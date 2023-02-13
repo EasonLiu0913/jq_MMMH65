@@ -29,6 +29,12 @@
         $('h1').css('color', 'blue')
         // $('h1').css('color', 'yellow')
 
+
+
+        fetch('https://dummyjson.com/products/2')
+            .then(res => res.json())
+            .then(json => console.log(json))
+
     </script>
 
 </body>
