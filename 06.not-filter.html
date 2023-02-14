@@ -25,10 +25,6 @@
     </div>
 
 
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
@@ -43,6 +39,24 @@
 
 
         // EVENT 事件
+
+        function sop() {
+            console.log('sop doing something...');
+            // 方法一:
+            // 1.先 reset , 全改
+            $("input").css("background", "transparent");
+            // 2.再依序條件做變色 
+            $("input:not(:checked) + span").css("background", "yellow");
+
+            // 方法二:
+            // 我們可以判斷是否有打勾，如果沒有，就透明，如果有，就黃色。
+
+        }
+
+        // 先選取要監聽的對象，接著，請瀏覽器幫我們監聽 click
+        // 最後是請瀏覽器幫我們執行相對應的 SOP (執行相對應的 function)
+        $('input').click(sop)
+
     </script>
 </body>
 

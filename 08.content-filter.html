@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content filter</title>
+</head>
+
+<body>
+    <div class="names">Json Kidd</div>
+    <div class="names">LeBron Jmes</div>
+    <div class="names">Json Willims</div>
+    <div class="names">
+        Jmes Hrden
+        <a href="#">111</a>
+        <img src="" alt="">
+        <p>111</p>
+    </div>
+
+    <script src="./js/jquery-3.6.3.min.js"></script>
+
+    <script>
+        $('div.names :contains("111")').css("background", "yellow");
+    </script>
+</body>
+
+</html>
