@@ -51,13 +51,15 @@
         // $('.level-1').children('li').css('border', '1px solid red')
         // $('.item-002').closest('.level-2').find('.item-03').css('border', '1px solid red')
 
-        function borderRed(e) {
-            console.log('borderRed', e.target);
-            $(e.target).css('border', '1px solid red')
-        }
+        // function borderRed(e) {
+        //     console.log('borderRed', e.target);
+        //     $(e.target).css('border', '1px solid red')
+        // }
 
 
-        $('.level-1').click(borderRed)
+        // $('.level-1').click(borderRed)
+
+        $('.item-003').closest('.item-2').prev().css('border', '1px solid red')
 
     </script>
 </body>
