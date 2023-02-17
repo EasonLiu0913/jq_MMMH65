@@ -59,9 +59,24 @@
     <script>
         // 1.綁定這五個 img 的 click 事件
 
-        // 2.可不可以拿到被使用者點擊圖片的 src
+        function changeImgDemo(e) {
+            // console.log('e.target', e.target);
 
-        // 3.可不可以更改 .img-demo 的 src
+            // 2.拿到 e.target 圖片的 src
+            // console.log('e.target src:', $(e.target).attr('src'));
+            const imgSrc = $(e.target).attr('src');
+
+            // 3.拿 e.target 圖片的 src ，去改 .img-demo img 的 src
+            $('.img-demo img').attr('src', imgSrc)
+        }
+
+        $('.img-row img').click(changeImgDemo)
+
+
+
+
+
+
 
     </script>
 </body>

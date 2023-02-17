@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" name="" id="">
+
+        <div class="box"></div>
+    </div>
+    <div>
+        <input type="checkbox" name="" id="">
+
+        <div class="box"></div>
+    </div>
+    <div>
+        <input type="checkbox" name="" id="">
+
+        <div class="box"></div>
+    </div>
+    <div>
+        <input type="checkbox" name="" id="">
+
+        <div class="box"></div>
+    </div>
+    <div>
+        <input type="checkbox" name="" id="">
+
+        <div class="box"></div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.3.min.js"></script>
+
+    <script>
+        $('input').click(function (e) {
+            // 判斷是否要變成紅色?
+
+            // 判斷的依據是甚麼?  -> if (checked)
+
+            // 流程控制:
+            if ($(e.target).prop('checked')) {
+
+                $(e.target).next().css('background', 'red')
+            }
+            else {
+                $(e.target).next().css('background', 'transparent')
+            }
+
+        })
+    </script>
+</body>
+
+</html>

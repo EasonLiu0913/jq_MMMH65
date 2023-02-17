@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr vs prop</title>
+</head>
+
+<body>
+    <button class="btnCheck">Check</button>
+    <button class="btnChange">Change</button>
+
+    <input type="checkbox">
+
+    <script src="./js/jquery-3.6.3.min.js"></script>
+
+    <script>
+
+        $('.btnCheck').click(function () {
+            // console.log('if attr checked?', $('input').attr('checked'));
+            console.log('if prop checked?', $('input').prop('checked'));
+        })
+
+        $('.btnChange').click(function () {
+            const checked = $('input').prop('checked')
+
+            $('input').prop('checked', !checked)
+        })
+
+
+    </script>
+</body>
+
+</html>
