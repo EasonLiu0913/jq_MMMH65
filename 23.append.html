@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append</title>
+</head>
+
+<body>
+    <input type="text"> <button>Click</button>
+    <div class="container">
+        <div class="row">
+            <!-- before -->
+            <ul>
+                <!-- prepend -->
+                <li>item 1</li>
+                <li>item 2</li>
+                <!-- test -->
+                <!-- append -->
+            </ul>
+            <!-- after -->
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.3.min.js"></script>
+
+    <script>
+        // const userText = 123
+        // const text2 = "666"
+        // $("ul").prepend("<li>" + userText * 0.8 + "</li>");
+
+        // $('ul').append(`<li>${userText * 0.8}${text2}</li>`)
+
+        // $("ul").prepend("<li>test</li>");
+
+
+        // $('button').click(function () {
+        //     const inputText = $('input').val()
+
+        //     $('ul').append(`<li>${inputText}</li>`)
+
+        //     $('input').val('')
+        // })
+
+        $("ul").before("<li>item 3</li>");
+    </script>
+
+</body>
+
+</html>
