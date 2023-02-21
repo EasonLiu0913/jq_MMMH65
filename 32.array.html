@@ -12,6 +12,32 @@
     <script src="./js/jquery-3.6.3.min.js"></script>
 
     <script>
+        const smallArray = [50, 60, 70, 80, 90, 100];
+
+        smallArray.push(110)
+
+        // console.log('陣列:', smallArray);
+        // console.log('陣列長度:', smallArray.length);
+
+
+        function addtion(index) {
+            console.log('addtion');
+            console.log('次數', index + 1);
+            console.log(`資料第${index + 1}筆,內容是:${smallArray[index]}`);
+        }
+
+        // for 迴圈
+        // 三個參數，用分號(;)隔開
+        // 第 1 個: 宣告變數
+        // 第 2 個: 一個執行條件，if true 就繼續做，直到 false 停止。
+        // 第 3 個: 一次迴圈執行完之後，你想做什麼?通常是用來改變判斷執行次數的變數(i)
+
+        // for (let i = 0; i < smallArray.length; i++) {
+        //     addtion(i)
+        // }
+
+
+
         const myArray = ['a', 'b', 'c', true, 123, ['aa', 'bb', 'ccc']]
 
         const myObj = {
@@ -25,6 +51,11 @@
             ['中正', '大安', '信義'],
             ['蘆洲', '三重', '新店'],
         ];
+
+        console.log('first data', districtArray[0]);
+        const myFirstData = districtArray[0];
+        console.log('first data 1', districtArray[0][1]);
+        console.log('first data 2', myFirstData[1]);
 
     </script>
 </body>

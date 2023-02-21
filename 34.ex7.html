@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>select option change</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form class="row g-2" action="">
+            <div class="col-auto">
+                <select class="form-control" name="city" id="city">
+                    <option value="0">基隆</option>
+                    <option value="1">台北</option>
+                    <option value="2">新北</option>
+                </select>
+            </div>
+
+            <div class="col-auto">
+                <select class="form-control" name="district" id="district">
+                    <option value="0">七堵區</option>
+                    <option value="1">中正區</option>
+                    <option value="2">暖暖區</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義'],
+            ['蘆洲', '三重', '新店', '板橋'],
+        ];
+
+
+
+        // 1.時機點:使用者改變城市的時候
+
+        $('#city').change(function () {
+            console.log('city change');
+
+            // 2.拿正確的城市資料:
+            // 2-1.使用者選哪個城市?
+            console.log('city val:', $('#city').val());
+            const cityVal = $('#city').val()
+            // 2-2.拿陣列裡相對應的資料
+            console.log('city data:', districtArray[cityVal]);
+            const cityData = districtArray[cityVal];
+
+
+            // 3.改目標 DOM 的資料內容
+            // $('#district option').eq(0).text(`${cityData[0]}區`)
+            // $('#district option').eq(1).text(`${cityData[1]}區`)
+            // $('#district option').eq(2).text(`${cityData[2]}區`)
+
+            for (let i = 0; i < cityData.length; i++) {
+                $('#district option').eq(i).text(`${cityData[i]}區`)
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

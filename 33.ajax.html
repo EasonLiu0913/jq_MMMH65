@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>ajax</title>
+    <style>
+        .myTitle {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script>
+        const maskArray = [
+            {
+                "name": "中衛醫療口罩",
+                "price": 300,
+                "image": "item-1.jpg"
+            },
+            {
+                "name": "勤達醫療口罩",
+                "price": 88,
+                "image": "item-2.jpg"
+            },
+            {
+                "name": "安馨醫用口罩",
+                "price": 229,
+                "image": "item-3.jpg"
+            },
+            {
+                "name": "藍歐兒醫用口罩",
+                "price": 149,
+                "image": "item-4.jpg"
+            }
+        ]
+
+
+        fetch('http://127.0.0.1:5500/json/mask.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                // console.log(myJson);
+
+                for (let i = 0; i < myJson.length; i++) {
+                    // console.log(myJson[i]);；
+
+                    const maskObj = myJson[i];
+
+                    console.log('name:', maskObj.name);
+                    console.log('price:', maskObj.price);
+                    console.log('image:', maskObj.image);
+                    $('.row').append(`<div class="col-12 col-md-6 col-lg-3">
+                                        <div class="myMask">
+                                            <img class="w-100" src="./imgs/${maskObj.image}" alt="">
+                                            <h4 class="myTitle">${maskObj.name}</h4>
+                                            <p>$${maskObj.price}</p>
+                                        </div>
+                                    </div>`)
+                }
+
+
+            });
+
+
+    </script>
+</body>
+
+</html>
