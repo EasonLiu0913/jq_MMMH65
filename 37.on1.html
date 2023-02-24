@@ -5,34 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-        }
-    </style>
+    <title>on1</title>
 </head>
 
 <body>
     <button>Click</button>
-
-    <div hidden>abc</div>
-    <div>
-        <p>def</p>
-    </div>
-
+    <ul id="myUl">
+        <li>item1</li>
+        <li>item2</li>
+    </ul>
 
     <script src="./js/jquery-3.6.3.min.js"></script>
 
     <script>
-        function show() {
-            console.log('show');
-            $("div:hidden").show();
-        }
+        $('button').on('click', function () {
+            $('ul').append(`<li>item 3</li>`)
+        })
 
-
-        // callback function 
-        $('button').click(show)
+        $('#myUl').on('click', 'li', function (e) {
+            console.log($(e.target).text());
+        })
     </script>
 </body>
 

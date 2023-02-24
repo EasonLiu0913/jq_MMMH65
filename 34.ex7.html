@@ -11,7 +11,7 @@
 
 <body>
     <div class="container mt-5">
-        <form class="row g-2" action="">
+        <form class="row g-2" action="xxxx-api.php">
             <div class="col-auto">
                 <select class="form-control" name="city" id="city">
                     <option value="0">基隆</option>
@@ -29,6 +29,12 @@
             </div>
         </form>
     </div>
+
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -60,8 +66,14 @@
             // $('#district option').eq(1).text(`${cityData[1]}區`)
             // $('#district option').eq(2).text(`${cityData[2]}區`)
 
+            // city change 時，執行一次
+            $('#district').empty()
+
             for (let i = 0; i < cityData.length; i++) {
-                $('#district option').eq(i).text(`${cityData[i]}區`)
+
+                $('#district').append(`<option value="${i}">${cityData[i]}區</option>`)
+
+                // $('#district option').eq(i).text(`${cityData[i]}區`)
             }
         })
 

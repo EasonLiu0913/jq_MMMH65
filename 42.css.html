@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="get">Get</button>
+    <button id="change">change</button>
+
+    <div class="box">box</div>
+
+
+    <script src="./js/jquery-3.6.3.min.js"></script>
+
+    <script>
+        // $('#get').click(function () {
+        //     console.log('bg:', $('.box').css('background-color'));
+        // })
+
+
+
+
+        // $('#change').click(function () {
+        //     const myBgColor = $('.box').css('background-color');
+
+        //     // 比較符
+        //     if (myBgColor === 'rgb(255, 170, 255)') {
+        //         $('.box').css('background-color', 'red')
+        //     }
+        //     else {
+        //         $('.box').css('background-color', '#faf')
+        //     }
+
+        // })
+
+
+        // CSS in JS
+        var style = {
+            color: "#fff",
+            background: "#000",
+        };
+
+        var style2 = {
+            color: "#000",
+            background: "#fff",
+        };
+
+        $('.box').css(style)
+
+
+        $('#change').click(function () {
+            $('.box').css(style2)
+        })
+
+    </script>
+</body>
+
+</html>
